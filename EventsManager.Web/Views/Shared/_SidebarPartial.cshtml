@@ -1,0 +1,143 @@
+﻿@using Microsoft.AspNet.Identity
+<div id="sidebar">
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", }))
+        {
+            @Html.AntiForgeryToken()
+        }
+        <nav>
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <div class="account pt-2 pl-3 ">
+                    <img class="rounded-circle img-fluid" src="@Url.Content("~/Content/app/img/avatar.jpg")" />
+                    <a class="c-pointer" id="dismiss">@User.Identity.GetUserName() <i class="fa fa-chevron-up"></i></a>
+                </div>
+            </div>
+
+            <!-- Sidebar Links -->
+            <ul class="list-unstyled ">
+                @if (User.IsInRole("Administrator"))
+                {
+                    <li class="item">
+                        <a href="@Url.Action("Index", "Categories")">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="icono">
+                                        <i class="fa fa-cog "></i>
+                                    </div>
+                                    <div>
+                                        Administrar
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                }
+                <li class="item">
+                    <a href="#">
+                        <div class="container">
+                            <div class="row">
+                                <div class="icono">
+                                    <i class="fa fa-users "></i>
+                                </div>
+                                <div>
+                                    Amigos
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="container">
+                            <div class="row">
+                                <div class="icono">
+                                    <i class="fa fa-ticket"></i>
+                                </div>
+                                <div>
+                                    Tickets
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="container">
+                            <div class="row">
+                                <div class="icono">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div>
+                                    Mis eventos
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="container">
+                            <div class="row">
+                                <div class="icono">
+                                    <i class="fa fa-eye"></i>
+                                </div>
+                                <div class="justify-content-between">
+                                    Notificaciones
+                                    <span class="badge badge-secondary badge-pill notif ml-2">5</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#">
+                        <div class="container">
+                            <div class="row">
+                                <div class="icono">
+                                    <i class="fa fa-line-chart"></i>
+                                </div>
+                                <div>
+                                    Finanzas
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="@Url.Action("Index", "Manage")">
+                        <div class="container">
+                            <div class="row">
+                                <div class="icono">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div>
+                                    Mi Perfil
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="javascript:document.getElementById('logoutForm').submit()">
+                        <div class="container">
+                            <div class="row">
+                                <div class="icono">
+                                    <i class="fa fa-sign-out fa-rotate-180"></i>
+                                </div>
+                                <div>
+                                    Salir
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+
+                </li>
+            </ul>
+        </nav>
+    }
+</div>

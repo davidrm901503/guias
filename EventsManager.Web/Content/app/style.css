@@ -1,0 +1,488 @@
+body, html {
+  height: 100%;
+}
+
+/* Resets */
+hr {
+  margin-left: 0;
+  max-width: 40px;
+}
+
+.op-0 {
+  opacity: 0;
+}
+
+.op-25 {
+  opacity: 25;
+}
+
+.op-50 {
+  opacity: 50;
+}
+
+.op-75 {
+  opacity: 75;
+}
+
+.op-100 {
+  opacity: 100;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.round-btn {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.bg-primary {
+  background-color: #007eb1 !important;
+}
+
+/* Jumbotron (hero) */
+.jumbotron {
+  position: relative;
+  background: url("img/beach-party.jpg") no-repeat bottom center/cover;
+}
+
+.jumbotron:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron .container {
+  padding: 75px 0;
+}
+
+.jumbotron h1,
+.jumbotron .lead {
+  color: #fff;
+}
+
+/* Custom button */
+.btn-primary {
+  background: #007eb1;
+  border: 0;
+}
+
+.btn-primary:hover {
+  background: #0384e5;
+}
+
+/* Features */
+/* Testimonials */
+.sec-testimonials {
+  padding-top: 128px;
+  padding-bottom: 128px;
+}
+
+/* Carousel */
+.carousel-indicators {
+  bottom: -30px;
+}
+
+.carousel-indicators li {
+  background: rgba(33, 33, 33, 0.1);
+}
+
+.carousel-indicators li:focus, .carousel-indicators li:hover {
+  background: rgba(33, 33, 33, 0.5);
+}
+
+.carousel-indicators .active {
+  background: rgba(33, 33, 33, 0.75);
+}
+
+.carrusel-text-color-white {
+  color: #efefef;
+}
+
+.carrusel-header {
+  color: #ffffff !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  color: #212121;
+}
+.carousel-control-next:focus, .carousel-control-next:hover,
+.carousel-control-prev:focus,
+.carousel-control-prev:hover {
+  color: #111;
+}
+
+/* Footer */
+.footer {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background: #007eb1;
+}
+
+.footer li:nth-of-type(n+2) {
+  margin-left: 8px;
+}
+
+.footer a {
+    font-size: 18px;
+  color: white;
+  transition: color .235s ease-in-out;
+}
+
+.footer a:focus, .footer a:hover {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar {
+  transition: background-color 200ms linear;
+}
+
+.navbar img {
+  height: 50px;
+}
+
+.search-hero {
+  border-radius: 50px;
+}
+
+.hero .jumbotron {
+  height: 100vh;
+}
+
+.hero .jumbotron input.search-hero:hover, .hero .jumbotron input.search-hero:active, .hero .jumbotron input.search-hero:focus {
+  border: none;
+  box-shadow: none;
+}
+.hero .scroll-down {
+  bottom: 0;
+}
+
+.event-container {
+  border: 3px solid white;
+}
+
+.event {
+  height: 230px;
+  background-color: gray;
+  color: white;
+}
+
+.event:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.event .event-hover {
+  opacity: 0;
+  transition: all ease .5s;
+}
+
+.event .event-hover:hover, .event .event-hover:active, .event .event-hover:focus {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.event .event-hover .event-hidden-hover .event-user-img {
+  height: 60px;
+  border: 1px solid white;
+}
+
+.event .event-hover .event-hidden-hover .event-icons a {
+  color: white;
+}
+
+.event .event-hover .event-hidden-hover a.btn {
+  border-radius: 50px;
+}
+
+.event .event-hover .event-hidden-hover a.btn:hover {
+  color: #333;
+}
+
+.event .img {
+    height: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.event .bottom-banner {
+    background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+}
+
+.event .bottom-banner .event-description .event-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.event .bottom-banner .event-description .event-type {
+  font-size: 13px;
+}
+
+.event .bottom-banner .event-description .event-place {
+  font-size: 12px;
+  margin-top: -5px;
+}
+
+.event .bottom-banner .event-price {
+  font-size: 20px;
+}
+
+.event .event-hidden-hover .event-user-img {
+  height: 60px;
+  border: 1px solid white;
+}
+
+.event .event-hidden-hover a.btn {
+  border-radius: 50px;
+}
+
+.footer-middle {
+  background-color: white !important;
+}
+
+.footer-middle hr {
+  height: 210px;
+  width: 2px;
+  margin: 0;
+  background-color: lightgray;
+  margin-left: -2px;
+}
+
+.footer-middle .footer-column {
+  color: #333;
+}
+
+.footer-middle .footer-column p {
+  color: #333 !important;
+  text-align: justify;
+}
+
+.footer-middle .footer-column a {
+  color: #333;
+}
+
+.footer-middle .footer-column a:hover, .footer-middle .footer-column a:active, .footer-middle .footer-column a:focus {
+  color: #007eb1;
+  text-decoration: none;
+}
+
+.footer-middle .footer-column .read-more {
+  font-size: 14px;
+}
+
+.footer-middle .footer-column .all-news {
+  font-size: 18px;
+  color: #333;
+}
+
+/* USER PAGE */
+.user-cover {
+  height: 250px;
+}
+
+.user-cover .user-picture {
+  height: 100px;
+  width: auto;
+}
+
+.fondo-carusel {
+  position: relative;
+  background: url("img/4.jpg");
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.fondo-carusel:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.block {
+  text-align: center;
+  vertical-align: middle;
+  padding-left: 100px;
+}
+
+#sec-contact {
+  background: #f0f0f0;
+}
+
+.diamond {
+  border: 3px solid #007eb1;
+  width: 120px;
+  height: 120px;
+  background: transparent;
+  /* Rotate */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /* Rotate Origin */
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: table;
+}
+
+.diamond p {
+  vertical-align: middle;
+  display: table-cell;
+  font-size: 40px;
+  color: #505050 !important;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.diamond strong {
+  vertical-align: middle;
+  display: table-cell;
+  font-size: 40px;
+  color: #505050 !important;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.bottom-word {
+  color: #007bff !important;
+}
+
+#sidebarCollapse, #account-img {
+  transition: all ease .25s;
+}
+
+#sidebar {
+  background: rgba(0, 0, 0, 0.8);
+  max-width: 236px;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* top layer */
+  z-index: 9999;
+  transition: 0.3s;
+  -webkit-transform: translateX(300px);
+  -moz-transform: translateX(300px);
+  -ms-transform: translateX(300px);
+  -o-transform: translateX(300px);
+  transform: translateX(300px);
+}
+
+.abierto {
+  -webkit-transform: translateX(0) !important;
+  -moz-transform: translateX(0) !important;
+  -ms-transform: translateX(0) !important;
+  -o-transform: translateX(0) !important;
+  transform: translateX(0) !important;
+}
+
+.account {
+  height: 66px;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.account img {
+  height: 50px !important;
+}
+
+.account a {
+  color: #ACB7B6 !important;
+  text-decoration: none;
+}
+
+.account h3 {
+  color: white !important;
+}
+
+.item {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.item a {
+  text-decoration: none;
+  color: #ACB7B6 !important;
+}
+
+.icono {
+  width: 30px;
+  text-align: center;
+}
+
+.notif {
+  background: #1096FC;
+  color: #BDDFFD;
+}
+
+#sec-about {
+  background: #F0F0F0;
+  border-bottom: 4px double #1096FC;
+}
+
+.my-input {
+  border: none !important;
+}
+
+.fig-search {
+  color: #88979A !important;
+  background: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.fig-search-fin {
+  color: #88979A;
+  background: white;
+  border-top-right-radius: 48%;
+  border-bottom-right-radius: 48%;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.c-pointer {
+  cursor: pointer !important;
+}
+
+#sec-how-works {
+  background-color: #007eb1;
+  border-bottom: 10px double white;
+}
+
+#sec-how-works hr {
+  height: 100px;
+  width: 2px;
+  margin: 0;
+  background-color: white;
+  margin-left: -2px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,72 @@
+﻿
+
+
+
+<div class="jumbotron jumbotron-fluid mb-0 d-flex">
+    <div class="container align-self-center">
+        <div class="row justify-content-center text-center ">
+            <div class="col-md-10 col-lg-6 align-self-center">
+                <h1 class="display-5">BUSCA TU EVENTO</h1>
+
+                <div class="row">
+                    <div class="col-12 mb-3 input-group">
+                        <div class="input-group col-12">
+                            <input type="search" class="form-control search-hero my-input" placeholder=""
+                                   aria-label=""
+                                   aria-describedby="basic-addon1">
+                            <a class="fig-search d-flex pr-1" data-toggle="modal" data-target="#modal_calendar">
+                                <i class="fa fa-calendar pr-1 align-self-center"></i>
+                            </a>
+                            <a class="fig-search d-flex fig-search-fin pr-2">
+                                <i class="fa fa-search pr-2  align-self-center"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 pb-2">
+                        <a class="btn btn-primary btn-lg" href="#sec-pricing" role="button">Sube tu Evento</a>
+                    </div>
+                    <div class="col-12 col-sm-6 pb-2">
+                        <a class="btn btn-outline-light btn-lg" href="#sec-pricing" role="button">
+                            Asiste a Un
+                            Evento
+                        </a>
+                    </div>
+                </div>
+                <p class="lead">
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal-->
+
+<div class="modal fade" id="modal_calendar">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Seleccione la fecha</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="datepicker">Date:</label>
+                    <input class="form-control" type="date"
+                           id="datepicker" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-event" type="button" class="btn btn-primary" data-dismiss="modal"
+                        aria-label="Close">
+                    Aceptar
+                </button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" aria-label="Close">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
