@@ -10,9 +10,151 @@
     <script src="js/jquery-3.3.1.min.js" type="application/javascript"></script>
 </head>
 <body>
+
 <section class="user-cover d-flex text-center">
-    <div class="h-100 w-100 position-absolute"
-         style="background-image: url('img/beach-party.jpg'); filter:blur(20px);"></div>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Fixed navbar</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#">Disabled</a>
+                            </li>
+                        </ul>
+
+                        <div class="mt-2 mt-md-0 text-center">
+                            <div class="mr-2">
+                                <img class="rounded-circle img-fluid " src="img/avatar.jpg" id="account-img"/>
+                            </div>
+                        </div>
+                        <div class="mt-2 mt-md-0 text-center">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link c-pointer" id="sidebarCollapse">Lola Barkin <i
+                                            class="fa fa-chevron-down"></i> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="sidebar">
+            <nav>
+                <!-- Sidebar Header -->
+                <div class="sidebar-header">
+                    <div class="account pt-2 pl-3 ">
+                        <img class="rounded-circle img-fluid" src="img/avatar.jpg"/>
+                        <a class="text-white c-pointer" id="dismiss">Lola Barkin <i class="fa fa-chevron-up"></i></a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Links -->
+                <ul class="list-unstyled ">
+                    <li class="item">
+                        <a href="#">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="icono">
+                                        <i class="fa fa-users "></i>
+                                    </div>
+                                    <div>
+                                        Amigos
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="icono">
+                                        <i class="fa fa-ticket"></i>
+                                    </div>
+                                    <div>
+                                        Tickets
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="icono">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div>
+                                        Mis eventos
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="icono">
+                                        <i class="fa fa-eye"></i>
+                                    </div>
+                                    <div class="justify-content-between">
+                                        Notificaciones
+                                        <span class="badge badge-secondary badge-pill notif ml-2">5</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="icono">
+                                        <i class="fa fa-line-chart"></i>
+                                    </div>
+                                    <div>
+                                        Finanzas
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="icono">
+                                        <i class="fa fa-sign-out fa-rotate-180"></i>
+                                    </div>
+                                    <div>
+                                        Salir
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="w-100 position-absolute blurred-cover"></div>
     <div class="align-self-center w-100 position-absolute pb-5 pt-2">
         <img class="rounded-circle img-fluid user-picture" src="img/avatar.jpg"/>
         <div class="text-white">Lola Barkin</div>
@@ -32,19 +174,18 @@
 <section class=" container-fluid ">
     <div class="row">
         <div id="main-content" class="col-md-8 col-lg-9  col-xl-9 col-12 p-0 ">
-
             <ul id="ul-tabs" class="nav nav-tabs nav-fill" role="tablist" style="margin-top: -41px">
                 <li class="nav-item">
                     <a id="notif-tab" href="#notif" data-toggle="tab" aria-controls="notif" role="tab"
-                       class="nav-link  active" style="color: white;cursor: pointer">Actividad</a>
+                       class="nav-link" style="color: white;cursor: pointer">Actividad</a>
                 </li>
                 <li class="nav-item">
-                    <a id="event-tab" href="#event" data-toggle="tab" aria-controls="event" role="tab" class="nav-link "
-                       style="color: white;cursor: pointer">Eventos</a>
+                    <a id="event-tab" href="#event" data-toggle="tab" aria-controls="event" role="tab"
+                       class="nav-link active" style="color: white;cursor: pointer">Eventos</a>
                 </li>
                 <li class="nav-item">
                     <a id="opinion-tab" href="#opinion" data-toggle="tab" aria-controls="opinion" role="tab"
-                       class="nav-link" style="color: white;cursor: pointer">Opiniones</a>
+                       class="nav-link " style="color: white;cursor: pointer">Opiniones</a>
                 </li>
                 <li class="nav-item">
                     <a id="follow-tab" href="#follow" data-toggle="tab" aria-controls="follow" role="tab"
@@ -52,9 +193,9 @@
                 </li>
             </ul>
             <div class="tab-content" style="background: #ffffff">
-                <div id="notif" role="tabpanel" class="container tab-pane fade show active">
+                <div id="notif" role="tabpanel" class="container tab-pane fade scroll-notif">
                     <div class="row">
-                        <div class="col-12 pt-4 pb-3 notif-event d-flex justify-content-center justify-content-sm-start">
+                        <div class="col-12 pt-3 pb-1 notif-event d-flex justify-content-center justify-content-sm-start">
                             <div>
                                 <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
                             </div>
@@ -67,9 +208,10 @@
                                 </div>
                             </div>
                         </div>
+                        <hr class="linea mt-2">
                     </div>
                     <div class="row">
-                        <div class="col-12 pt-4 pb-3 notif-event d-flex justify-content-center justify-content-sm-start">
+                        <div class="col-12 pt-1 pb-1 notif-event d-flex justify-content-center justify-content-sm-start">
                             <div>
                                 <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
                             </div>
@@ -82,9 +224,10 @@
                                 </div>
                             </div>
                         </div>
+                        <hr class="linea mt-2">
                     </div>
                     <div class="row">
-                        <div class="col-12 pt-4 pb-3 notif-event d-flex justify-content-center justify-content-sm-start">
+                        <div class="col-12 pt-1 pb-1 notif-event d-flex justify-content-center justify-content-sm-start">
                             <div>
                                 <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
                             </div>
@@ -97,181 +240,1020 @@
                                 </div>
                             </div>
                         </div>
+                        <hr class="linea mt-2">
                     </div>
-                    <div class="row">
-                        <div class="col-12 pt-4 pb-3 notif-event d-flex justify-content-center justify-content-sm-start">
-                            <div>
-                                <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                            </div>
-                            <div>
-                                <div>
-                                    <p class="notif-name">Lola Barkins</p>
-                                    <p class="notif-date">10/2/2018 4:25 pm</p>
-                                    <p style="color: #868686;">Ha creado un evento: <span
-                                            class="event-name">Fiesta vaquera</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
-                <div id="event" role="tabpanel" class="container tab-pane fade">
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
+                <div id="event" role="tabpanel" class="container tab-pane fade show active">
+                    <ul id="sub-tabpane-event" class="nav nav-tabs justify-content-center justify-content-md-end mb-2"
+                        role="tablist">
+                        <li class="nav-item">
+                            <a id="uploaded-tab" class="nav-link active" href="#uploaded-event" data-toggle="tab"
+                               role="tab">Subidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="organiz-tab" class="nav-link" href="#organ-event" data-toggle="tab" role="tab">Organizados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="asist-tab" class="nav-link" href="#asisted-event" data-toggle="tab" role="tab">Asistidos</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="uploaded-event" role="tabpanel" class="scroll container tab-pane show active fade">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-primary" style="cursor: auto">Activo</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-danger" style="cursor: auto">Finalizado</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-primary" style="cursor: auto">Activo</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-danger" style="cursor: auto">Finalizado</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
+                        <div id="organ-event" role="tabpanel" class="scroll container tab-pane fade">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-primary" style="cursor: auto">Activo</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-danger" style="cursor: auto">Finalizado</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-primary" style="cursor: auto">Activo</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-danger" style="cursor: auto">Finalizado</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="asisted-event" role="tabpanel" class="scroll container tab-pane fade">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-primary" style="cursor: auto">Activo</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-danger" style="cursor: auto">Finalizado</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-primary" style="cursor: auto">Activo</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 mol-md-6 col-sm-6 col-12 text-justify event-event resize-event-col-6 pl-4 pr-4">
+                                    <div class="row">
+                                        <div class="event-img col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 resize-img p-0"></div>
+                                        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 resize-event-text pl-0 pr-0 pl-lg-2 pr-lg-2">
+                                            <div class="row">
+                                                <div class="col-sm-7 col-12 text-md-left text-center"><strong
+                                                        class="event-name">Fiesta
+                                                    Playera</strong>
+                                                </div>
+                                                <div class="col-sm-5 col-12 text-md-right text-center"><p
+                                                        class="event-date">
+                                                    25/2/2018</p></div>
+                                            </div>
+                                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                                                ligula
+                                                eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                                                parturient
+                                                montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                                pellentesque
+                                                eu,
+                                                pretium quis, sem.</p>
+                                            <div class="col-12 text-right ">
+                                                <div class="btn btn-danger" style="cursor: auto">Finalizado</div>
+                                            </div>
+                                        </div>
+                                        <hr class="linea mt-2">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div id="opinion" role="tabpanel" class="container tab-pane fade">
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
+                    <ul id="sub-tabpane-opinion" class="nav nav-tabs justify-content-center justify-content-md-end mb-2"
+                        role="tablist">
+                        <li class="nav-item">
+                            <a id="send-tab" class="nav-link active" href="#send-event" data-toggle="tab"
+                               role="tab">Opiniones enviadas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="reciv-tab" class="nav-link" href="#reciv-event" data-toggle="tab" role="tab">Opiniones
+                                recibidas</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="send-event" role="tabpanel" class="scroll container tab-pane show active fade">
+                            <div class="row opinio-event pt-2">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-1 col-xl-1 text-center">
+                                    <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 text-justify pl-lg-4 pl-xl-3">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12 text-lg-left text-md-center text-center"><strong
+                                                class="event-name">A: Lola Barkin</strong>
+                                        </div>
+                                        <div class="col-lg-6 col-12 text-lg-right text-md-center text-center"><p
+                                                class="event-date">
+                                            14/2/2018 4:30 pm</p></div>
+                                    </div>
+                                    <p class="opinion-text"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+                                        magnis dis
+                                        parturient montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                        pellentesque
+                                        eu, pretium quis, sem.</p>
+                                    <div class="col-12 text-right ">
+                                        <button class="btn btn-outline-primary" style="cursor: auto">Leer mas...
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="linea mt-2">
+                            </div>
+                            <div class="row opinio-event pt-2">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-1 col-xl-1 text-center">
+                                    <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 text-justify pl-lg-4 pl-xl-3">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12 text-lg-left text-md-center text-center"><strong
+                                                class="event-name">A: Lola Barkin</strong>
+                                        </div>
+                                        <div class="col-lg-6 col-12 text-lg-right text-md-center text-center"><p
+                                                class="event-date">
+                                            14/2/2018 4:30 pm</p></div>
+                                    </div>
+                                    <p class="opinion-text"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+                                        magnis dis
+                                        parturient montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                        pellentesque
+                                        eu, pretium quis, sem.</p>
+                                    <div class="col-12 text-right ">
+                                        <button class="btn btn-outline-primary" style="cursor: auto">Leer mas...
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="linea mt-2">
+                            </div>
+                            <div class="row opinio-event pt-2">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-1 col-xl-1 text-center">
+                                    <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 text-justify pl-lg-4 pl-xl-3">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12 text-lg-left text-md-center text-center"><strong
+                                                class="event-name">A: Lola Barkin</strong>
+                                        </div>
+                                        <div class="col-lg-6 col-12 text-lg-right text-md-center text-center"><p
+                                                class="event-date">
+                                            14/2/2018 4:30 pm</p></div>
+                                    </div>
+                                    <p class="opinion-text"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+                                        magnis dis
+                                        parturient montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                        pellentesque
+                                        eu, pretium quis, sem.</p>
+                                    <div class="col-12 text-right ">
+                                        <button class="btn btn-outline-primary" style="cursor: auto">Leer mas...
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="linea mt-2">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
+                        <div id="reciv-event" role="tabpanel" class="scroll container tab-pane fade">
+                            <div class="row opinio-event pt-2">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-1 col-xl-1 text-center">
+                                    <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 text-justify pl-lg-4 pl-xl-3">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12 text-lg-left text-md-center text-center"><strong
+                                                class="event-name">Lola Barkin</strong>
+                                        </div>
+                                        <div class="col-lg-6 col-12 text-lg-right text-md-center text-center"><p
+                                                class="event-date">
+                                            14/2/2018 4:30 pm</p></div>
+                                    </div>
+                                    <p class="opinion-text"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+                                        magnis dis
+                                        parturient montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                        pellentesque
+                                        eu, pretium quis, sem.</p>
+                                    <div class="col-12 text-right ">
+                                        <button class="btn btn-outline-primary" style="cursor: auto">Leer mas...
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="linea mt-2">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
+                            <div class="row opinio-event pt-2">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-1 col-xl-1 text-center">
+                                    <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 text-justify pl-lg-4 pl-xl-3">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12 text-lg-left text-md-center text-center"><strong
+                                                class="event-name">Lola Barkin</strong>
+                                        </div>
+                                        <div class="col-lg-6 col-12 text-lg-right text-md-center text-center"><p
+                                                class="event-date">
+                                            14/2/2018 4:30 pm</p></div>
+                                    </div>
+                                    <p class="opinion-text"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+                                        magnis dis
+                                        parturient montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                        pellentesque
+                                        eu, pretium quis, sem.</p>
+                                    <div class="col-12 text-right ">
+                                        <button class="btn btn-outline-primary" style="cursor: auto">Leer mas...
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="linea mt-2">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
+                            <div class="row opinio-event pt-2">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-1 col-xl-1 text-center">
+                                    <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 text-justify pl-lg-4 pl-xl-3">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12 text-lg-left text-md-center text-center"><strong
+                                                class="event-name">Lola Barkin</strong>
+                                        </div>
+                                        <div class="col-lg-6 col-12 text-lg-right text-md-center text-center"><p
+                                                class="event-date">
+                                            14/2/2018 4:30 pm</p></div>
+                                    </div>
+                                    <p class="opinion-text"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+                                        magnis dis
+                                        parturient montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                        pellentesque
+                                        eu, pretium quis, sem.</p>
+                                    <div class="col-12 text-right ">
+                                        <button class="btn btn-outline-primary" style="cursor: auto">Leer mas...
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="linea mt-2">
+                            </div>
+                            <div class="row opinio-event pt-2">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-1 col-xl-1 text-center">
+                                    <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 text-justify pl-lg-4 pl-xl-3">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12 text-lg-left text-md-center text-center"><strong
+                                                class="event-name">Lola Barkin</strong>
+                                        </div>
+                                        <div class="col-lg-6 col-12 text-lg-right text-md-center text-center"><p
+                                                class="event-date">
+                                            14/2/2018 4:30 pm</p></div>
+                                    </div>
+                                    <p class="opinion-text"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                        Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+                                        magnis dis
+                                        parturient montes, nascetur ridiculus mus.Donec quam felis, ultricies nec,
+                                        pellentesque
+                                        eu, pretium quis, sem.</p>
+                                    <div class="col-12 text-right ">
+                                        <button class="btn btn-outline-primary" style="cursor: auto">Leer mas...
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr class="linea mt-2">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="follow" role="tabpanel" class="container tab-pane fade">
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
+                    <ul id="sub-tabpane-follow" class="nav nav-tabs justify-content-center justify-content-md-end mb-2"
+                        role="tablist">
+                        <li class="nav-item">
+                            <a id="next-tab" class="nav-link active" href="#next-event" data-toggle="tab"
+                               role="tab">Siguen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="next2-tab" class="nav-link" href="#next2-event" data-toggle="tab" role="tab">Les
+                                siguen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="near-tab" class="nav-link" href="#near-event" data-toggle="tab"
+                               role="tab">Próximos</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="next-event" role="tabpanel" class="scroll container tab-pane show active fade">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
+                        <div id="next2-event" role="tabpanel" class="scroll container tab-pane fade">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 row pt-4 pb-3 notif-event">
-                        <div>
-                            <img class="notif-img rounded-circle" src="img/avatar.jpg"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p class="notif-name">Lola Barkins</p>
-                                <p class="notif-date">10/2/2018 4:25 pm</p>
-                                <p style="color: #868686;">Ha creado un evento: <span
-                                        class="event-name">Fiesta vaquera</span></p>
+                        <div id="near-event" role="tabpanel" class="scroll container tab-pane fade">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-3 resize-col-6">
+                                    <div class="card  user-card">
+                                        <div class="card-header header-img w-100 h-50 text-center">
+                                            <img class="rounded-circle event-img" src="img/avatar.jpg">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <h5 class="pt-3" style="color: #007EB1;">Lola Barkin</h5>
+                                                <div class="row" style="font-size: 0.7rem">
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Siguiendo</strong></div>
+                                                        <div class="col-12">12548</div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-12 p-0 resize-word">
+                                                        <div class="col-12"><strong>Seguidores</strong></div>
+                                                        <div class="col-12">148</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -396,7 +1378,6 @@
         </aside>
     </div>
 </section>
-
 <footer class="footer">
     <div class="container">
         <ul class="list-inline mb-0 text-center">
@@ -549,4 +1530,5 @@
 <script src="js/bootstrap.bundle.min.js" type="application/javascript"></script>
 <script src="js/bootstrap-datepicker.min.js" type="application/javascript"></script>
 <script src="js/bootstrap-datepicker.es.min.js" type="application/javascript"></script>
+<script src="js/functions.js" type="application/javascript"></script>
 </html>
