@@ -48,8 +48,17 @@ jQuery(document).ready(function ($) {
     }());
 
     if (!dateSupported) {
-        $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
+        $("#datepicker").datepicker({dateFormat: 'dd-mm-yyyy'});
     }
+
+    $('input#event-range-date').daterangepicker({
+        timePicker: true,
+        timePickerIncrement: 30,
+        locale: {
+            format: 'DD/MM/YYYY h:mm A'
+        }
+    });
+    $('input#cal-datepicker').datepicker({dateFormat: 'dd-mm-yyyy h:mm A'});
 
 });
 
