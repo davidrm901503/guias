@@ -8,6 +8,8 @@ namespace EventsManager.Web
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            BundleTable.EnableOptimizations = true;
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-3.3.1.min.js"));
 
@@ -31,8 +33,6 @@ namespace EventsManager.Web
                       "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-datepicker.min.css",
                       "~/Content/font-awesome.css"));
-            bundles.Add(new StyleBundle("~/Content/css/app").Include(
-                      "~/Content/app/style.css"));
         }
     }
 }
