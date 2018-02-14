@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Search</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+    <link href="css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="js/jquery-3.3.1.min.js" type="application/javascript"></script>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand d-none d-md-block" href="#">Logo</a>
+            <div class="row mr-auto search-bar">
+                <div class="col-12 input-group">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                            aria-label="Toggle navigation" style="border:none">
+                        <a class="navbar-brand mr-0" href="#">Logo</a>
+                        <div class="container pl-0"
+                             style="display: inline-block;font-size: 9px;height:9px;width:9px;color: white">
+                            <svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"
+                                 style="height:1em;width:1em;fill:currentColor">
+                                <path d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <input type="search" class="form-control search-hero my-input" placeholder=""
+                           aria-label=""
+                           aria-describedby="basic-addon1">
+                    <a class="fig-search d-flex fig-search-fin pr-3">
+                        <i class="fa fa-search pr-2 align-self-center"></i>
+                    </a>
+
+                    <a class="d-flex advanced-action-button pl-0 pr-1 href=" #">
+                    <i id="advanced-search-action"
+                       class="fa fa-chevron-down advanced-action-button align-self-center"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                <div class="text-center pl-0 pr-0 d-flex align-items-center">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link c-pointer" id="register" style="color: white">Regístrese </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link c-pointer" id="inicie" style="color: white">Inicie Sesión </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+</header>
+<div class="container-fluid search-events">
+    <div class="row">
+        <div class="col-12 col-lg-8 p-0">
+            <!--advanced-search-->
+            <div id="advanced-search-div" class="advanced-search bg-primary hide-advanced-search">
+                <p id="cant-eventos" class="text-center d-none">12 Eventos encontrados</p>
+                <div class="container">
+                    <div class="d-flex flex-row row">
+                        <!--fecha-->
+                        <div class="dropdown p-1 col  text-center">
+                            <button class="dropdown-toggle btn my-drop-button" role="button" id="date"
+                                    data-toggle="dropdown">Fecha
+                                <span id="date-range-badge" class="badge badge-pill badge-light">Todo</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="date">
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="check-default-date" name="days" value="Todo" checked="checked">
+                                        <label class="custom-control-label" for="check-default-date">Cualquiera</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check1day" name="days" value="1">
+                                        <label class="custom-control-label" for="Check1day">Mañana</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check3days" name="days" value="3">
+                                        <label class="custom-control-label" for="Check3days">Próximos 3 días</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check5days" name="days" value="5">
+                                        <label class="custom-control-label" for="Check5days">Próximos 5 días</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check10day" name="days" value="10">
+                                        <label class="custom-control-label" for="Check10day">Próximos 10 días</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider custom-radio"></div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="CheckXday" name="days" value="P">
+                                        <label class="custom-control-label" for="CheckXday" data-toggle="modal"
+                                               data-target="#modal_calendar"
+                                               style="cursor: pointer">Personalizado</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--price-->
+                        <div class="dropdown p-1 col text-center">
+                            <button class="dropdown-toggle btn my-drop-button" role="button" id="price"
+                                    data-toggle="dropdown">Precio
+                                <span id="price-range-badge" class="badge badge-pill badge-light">Todo</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="date">
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="check-default-price" name="price" value="Todo" checked="checked">
+                                        <label class="custom-control-label" for="check-default-price">Cualquiera</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check50" name="price" value="50">
+                                        <label class="custom-control-label" for="Check50">Menos de $50</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check100" name="price" value="100">
+                                        <label class="custom-control-label" for="Check100">Menos de $100</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check150" name="price" value="150">
+                                        <label class="custom-control-label" for="Check150">Menos de $150</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check200" name="price" value="200">
+                                        <label class="custom-control-label" for="Check200">Menos de $200</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="CheckXmoney" name="price" value="P">
+                                        <label class="custom-control-label" for="CheckXmoney" data-toggle="modal"
+                                               data-target="#modal_money" style="cursor: pointer">Personalizado</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--plazas-->
+                        <div class="dropdown p-1 col text-center">
+                            <button class="dropdown-toggle btn my-drop-button" role="button" id="plazas"
+                                    data-toggle="dropdown">Capacidad
+                                <span id="plazas-range-badge" class="badge badge-pill badge-light">Todo</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="plazas">
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="check-default-people" name="people" value="Todo" checked="checked">
+                                        <label class="custom-control-label"
+                                               for="check-default-people">Cualquiera</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check1p" name="people" value="1">
+                                        <label class="custom-control-label" for="Check1p">1 o más</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check3p" name="people" value="3">
+                                        <label class="custom-control-label" for="Check3p">3 o más</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check5p" name="people" value="5">
+                                        <label class="custom-control-label" for="Check5p">5 o más</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="Check10p" name="people" value="10">
+                                        <label class="custom-control-label" for="Check10p">10 o más</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-item">
+                                    <div class="custom-control custom-radio text-left mb-2">
+                                        <input type="radio" class="custom-control-input"
+                                               id="CheckXp" name="people" value="P">
+                                        <label class="custom-control-label" for="CheckXp" data-toggle="modal"
+                                               data-target="#modal_people" style="cursor: pointer">Personalizado</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--eventos-->
+            <div class="row pl-3 pt-2 pr-3">
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container col-xs-12 col-sm-6 col-md-6 col-lg-4 p-0">
+                    <div class="event">
+                        <div class="event-hover position-absolute w-100 ">
+                            <div class="container pl-0 pr-0">
+                                <div class="event-hidden-hover text-center">
+                                    <img class="event-user-img rounded-circle img-fluid mt-2" src="img/avatar.jpg"/>
+                                    <p class="mb-0">Lola Barkin</p>
+                                    <a class="btn btn-outline-light pl-4 pr-4 pt-0 pb-0">VIEW</a>
+                                    <div class="row event-icons">
+                                        <div class="col-4">
+                                            <i class="fa fa-2x fa-check-square-o"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                        <div class="col-4"><a href="#"><i class="fa fa-2x fa-share-alt"></i></a>
+                                        </div>
+                                        <div class="col-4"><i class="fa fa-2x fa-user"></i>
+                                            <p class="n mb-0">3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="img" style="background: url('img/event.jpg')"></div>
+                        <div class="bottom-banner position-absolute w-100">
+                            <div class="d-flex">
+                                <div class="row w-100  mr-0 ml-0 align-self-end">
+                                    <div class="col-10 pl-0 pr-0">
+                                        <div class="event-description">
+                                            <p class="event-title mb-0 ml-2">Himalaya Climbing</p>
+                                            <p class="event-type mb-0 ml-2">Walking Tour</p>
+                                            <p class="event-place mb-0 ml-2">La Habana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 pl-0 pr-0 align-self-center">
+                                        <h4 class="event-price mb-0 float-right mr-2">10$</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--pagination-->
+            <nav aria-label="Page navigation ">
+                <ul class="pagination pagination-lg justify-content-center my-pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <footer class="footer">
+                <div class="container">
+                    <ul class="list-inline mb-0 text-center">
+                        <li class="list-inline-item">
+                            <a href=""><span class="fa fa-twitter"></span></a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href=""><span class="fa fa-google-plus"></span></a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href=""><span class="fa fa-instagram"></span></a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href=""><span class="fa fa-envelope-o"></span></a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href=""><span class="fa fa-facebook"></span></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href=""><span class="fa fa-pinterest-p"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+            <footer class="footer-middle footer">
+                <div class="container">
+                    <div class="row d-flex">
+                        <div class="col-xs-12 col-md-4 col-lg-3 footer-column d-none d-md-block">
+                            <h5>Aenean</h5>
+                            <ul class="list-group" style="list-style: none">
+                                <li class="lead">
+                                    <a href="&">In enim justo</a>
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Rhoncus ut</a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Imperdiet a</a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Donec quam </a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Ultricies nec</a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Pellentesque eu</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <hr class="d-none d-md-block">
+                        <div class="col-xs-12 col-md-4 col-lg-3 footer-column d-none d-md-block">
+                            <h5>Aenean</h5>
+                            <ul class="list-group" style="list-style: none">
+                                <li class="lead">
+                                    <a href="&">In enim justo</a>
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Rhoncus ut</a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Imperdiet a</a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Donec quam </a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Ultricies nec</a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Pellentesque eu</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <hr class="d-none d-md-block">
+                        <div class="col-xs-12 col-md-4 col-lg-3 footer-column d-none d-md-block">
+                            <h5>Aenean</h5>
+                            <ul class="list-group" style="list-style: none">
+                                <li class="lead">
+                                    <a href="&">In enim justo</a>
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Rhoncus ut</a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Imperdiet a</a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Donec quam </a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Ultricies nec</a>
+
+                                </li>
+                                <li class="lead">
+                                    <a href="&">Pellentesque eu</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <hr class="d-none d-md-block">
+                        <div class="col-xs-12 col-md-12 col-lg-3 footer-column mt-md-4 ">
+                            <h5 class="text-center">Necesita Ayuda</h5>
+                            <div class="container mb-2 text-center">
+                                <a href="&"> <i class="fa fa-wechat fa-4x"></i>
+                                    <br>Web chat</a>
+                            </div>
+                            <div class="text-center">
+                                Pague seguro <br>
+                                <i class="fa fa-lock "></i>
+                                <i class="fa fa-cc-paypal "></i>
+                                <i class="fa fa-cc-mastercard "></i>
+                                <i class="fa fa-cc-visa "></i>
+                                <i class="fa fa-cc-amex "></i>
+                                <i class="fa fa-cc-discover "></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <footer class="footer bg-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p class="text-white mb-0" style="text-align: center; color:#909090">Copyright 2018. Todos
+                                los
+                                derechos reservados</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <div class="col-4 d-none d-md-block p-0 search-map">
+            <div class="container p-0" style="position: fixed">
+                <img src="img/m.jpg">
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--modals-->
+<div class="modal fade" id="modal_money">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Seleccione el precio</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input class="form-control" name="money" type="number"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-money" type="button" class="btn btn-primary" data-dismiss="modal"
+                        aria-label="Close">Aceptar
+                </button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" aria-label="Close">Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="modal fade" id="modal_calendar">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Seleccione la fecha</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="datepicker">Date:</label>
+                    <input class="form-control" type="date" id="datepicker"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-event" type="button" class="btn btn-primary" data-dismiss="modal"
+                        aria-label="Close">Aceptar
+                </button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" aria-label="Close">Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="modal fade" id="modal_people">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4>Cantidad de personas</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group text-center">
+                    <input class="form-control" name="custom-people" type="number">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-people" type="button" class="btn btn-primary" data-dismiss="modal"
+                        aria-label="Close">Aceptar
+                </button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" aria-label="Close">Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+<script src="js/bootstrap.bundle.min.js" type="application/javascript"></script>
+<script src="js/bootstrap-datepicker.min.js" type="application/javascript"></script>
+<script src="js/bootstrap-datepicker.es.min.js" type="application/javascript"></script>
+<script src="js/functions2.js" type="application/javascript"></script>
+
+</html>
