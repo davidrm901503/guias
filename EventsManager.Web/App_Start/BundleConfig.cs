@@ -25,14 +25,17 @@ namespace EventsManager.Web
                       "~/Scripts/bootstrap.bundle.min.js",
                       "~/Scripts/bootstrap-datepicker.min.js",
                       "~/Scripts/bootstrap-datepicker.es.min.js",
+                      "~/Scripts/moment-with-locales.min.js",
+                      "~/Scripts/daterangepicker.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include("~/Scripts/app/functions.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.min.css",
-                      "~/Content/bootstrap-datepicker.min.css",
-                      "~/Content/font-awesome.css"));
+                    "~/Content/font-awesome.css",
+                    "~/Content/bootstrap.min.css",
+                    "~/Content/daterangepicker.css",
+                    "~/Content/bootstrap-datepicker.min.css"));
         }
     }
 }

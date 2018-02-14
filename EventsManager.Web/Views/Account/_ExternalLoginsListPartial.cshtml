@@ -16,12 +16,8 @@
             @Html.AntiForgeryToken()
             
             foreach (AuthenticationDescription p in loginProviders) {
-                @*<a class="btn btn-primary btn-block  text-white mb-1 mt-2">
-                    <i class="fa fa-facebook mr-2"></i>Entrar con Facebook
-                </a>*@
-
-                <button type="submit" class="btn btn-@Html.RenderClass(p.Caption) btn-block text-white mb-1 mt-2 @Html" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
-                    <i class="fa fa-@p.Caption mr-2"></i>Entrar con @p.AuthenticationType
+                <button type="submit" class="btn @Html.RenderClass(p.Caption) btn-block text-white mb-1 @(p.Caption.Equals("facebook", StringComparison.OrdinalIgnoreCase) ? "mt-4" : "mt-2")" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
+                    <i class="fa fa-@p.Caption"></i> Entrar con @p.AuthenticationType
                 </button>
             }
         }

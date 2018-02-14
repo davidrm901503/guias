@@ -73,6 +73,13 @@ namespace EventsManager.Web
                 Caption = "google-plus"
             });
 
+            app.UseTwitterAuthentication(new TwitterAuthenticationOptions()
+            {
+                ConsumerKey = "key",
+                ConsumerSecret = "secret",
+                Caption = "twitter"
+            });
+
             app.UseFacebookAuthentication(new FacebookAuthenticationOptions()
             {
                 AppId = "Add",

@@ -14,9 +14,11 @@ namespace EventsManager.Web.Helpers
             switch (authType)
             {
                 case "google-plus":
-                    return MvcHtmlString.Create("danger");
+                    return MvcHtmlString.Create("btn-danger");
+                case "twitter":
+                    return MvcHtmlString.Create("btn-info");
                 default:
-                    return MvcHtmlString.Create("primary");
+                    return MvcHtmlString.Create("btn-primary");
             }
         }
     }

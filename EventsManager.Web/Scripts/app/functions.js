@@ -1,16 +1,6 @@
 jQuery(document).ready(function ($) {
 
-    $('a[href*="#"]:not([href="#"])').click(function (e) {
-        const target = $(e.target.hash);
 
-        if (target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top
-            }, 1000);
-
-            return false;
-        }
-    });
     $(window).scroll(function () {
         if ($(window).scrollTop() > 56) {
             $(".navbar").addClass("bg-primary");
@@ -58,8 +48,17 @@ jQuery(document).ready(function ($) {
     }());
 
     if (!dateSupported) {
-        $("#datepicker").datepicker({dateFormat: 'yy-mm-dd'});
+        $("#datepicker").datepicker({dateFormat: 'dd-mm-yyyy'});
     }
+
+    $('input#event-range-date').daterangepicker({
+        timePicker: true,
+        timePickerIncrement: 30,
+        locale: {
+            format: 'DD/MM/YYYY h:mm A'
+        }
+    });
+    $('input#cal-datepicker').datepicker({dateFormat: 'dd-mm-yyyy h:mm A'});
 
 });
 
